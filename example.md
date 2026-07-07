@@ -8,6 +8,12 @@ The widget follows the anywidget specification, so it may be invoked either in a
 
 Use the `anywidget` directive with one of the releases:
 
+```{raw} markdown
+```{anywidget} https://github.com/ssenhorst/airy-spot-widget/releases/latest/download/widget.js
+:css: https://github.com/ssenhorst/airy-spot-widget/releases/latest/download/widget.css
+```
+```
+
 ## Usage (python)
 
 Add the repository as a dependency using your favorite package manager, e.g. uv:
