@@ -1,0 +1,15 @@
+{
+  "name": "airy-spot-widget-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/widget.js --bundle --format=esm --target=es2020 --loader:.css=text --loader:.json=json --outfile=dist/widget.js && esbuild src/widget.js --bundle --format=esm --target=es2020 --loader:.css=text --loader:.json=json --outfile=dist/widget-min.js --minify && cp src/widget.css dist/widget.css && cp -r dist airy_spot_widget/static"
+  },
+  "dependencies": {
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

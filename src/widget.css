@@ -1,0 +1,211 @@
+:host {
+  --bg: #f7f8fb;
+  --panel: #ffffff;
+  --panel-border: #d7deea;
+  --text: #1f2937;
+  --muted: #5f6b7a;
+  --accent: #d94f4f;
+  --button-bg: #eef2fb;
+  --button-hover: #dde5f7;
+  --button-text: #1e293b;
+  --line: #2d3748;
+  --slice-fill: rgb(205, 26, 26);
+  --measure-bg: #f5f7fc;
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --bg: #0e131e;
+    --panel: #151d2c;
+    --panel-border: #2a3750;
+    --text: #e4ecff;
+    --muted: #9eb2da;
+    --accent: #ff9f6b;
+    --button-bg: #1f2d47;
+    --button-hover: #294065;
+    --button-text: #dce7ff;
+    --line: #c8dafc;
+    --slice-fill: rgba(154, 186, 244, 0.2);
+    --measure-bg: #121a28;
+  }
+}
+
+.airy-root {
+  background: radial-gradient(circle at 15% 20%, rgba(118, 146, 209, 0.2), transparent 36%),
+    radial-gradient(circle at 85% 80%, rgba(208, 132, 98, 0.2), transparent 32%),
+    var(--bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  width: 100%;
+}
+
+.airy-panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  box-sizing: border-box;
+  min-height: 320px;
+  padding: 10px;
+}
+
+.airy-plot {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+
+.airy-controls-wrap {
+  display: flex;
+  flex: 0.95 1 280px;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 260px;
+}
+
+.airy-controls-box,
+.airy-measure-box {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.airy-controls-box {
+  flex: 1 1 auto;
+}
+
+.airy-measure-box {
+  background: var(--measure-bg);
+  flex: 0 0 auto;
+}
+
+.airy-title {
+  color: var(--text);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  margin: 0 0 8px;
+}
+
+.airy-subtitle {
+  color: var(--muted);
+  font-size: 0.84rem;
+  margin: 0 0 8px;
+}
+
+.airy-presets {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 8px;
+}
+
+.airy-presets button {
+  background: var(--button-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  color: var(--button-text);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 8px;
+}
+
+.airy-presets button:hover {
+  background: var(--button-hover);
+}
+
+.airy-slider {
+  margin: 8px 0;
+}
+
+.airy-slider label {
+  color: var(--text);
+  display: flex;
+  font-size: 0.84rem;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.airy-slider input[type='range'] {
+  width: 100%;
+}
+
+.airy-measure-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.airy-measure-item {
+  border-bottom: 1px dashed var(--panel-border);
+  padding-bottom: 6px;
+}
+
+.airy-measure-item:last-child {
+  border-bottom: none;
+}
+
+.airy-measure-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-bottom: 2px;
+}
+
+.airy-measure-value {
+  color: var(--text);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.axis path,
+.axis line {
+  stroke: var(--panel-border);
+}
+
+.axis text {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.slice-line {
+  fill: none;
+  stroke: var(--slice-fill);
+  stroke-width: 2;
+}
+
+.zero-marker {
+  stroke: var(--accent);
+  stroke-dasharray: 5 5;
+  stroke-width: 2;
+}
+
+.zero-text {
+  fill: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .airy-root {
+    gap: 10px;
+  }
+
+  .airy-plot,
+  .airy-controls-wrap {
+    flex: 1 1 100%;
+  }
+}

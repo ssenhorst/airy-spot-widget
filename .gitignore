@@ -1,0 +1,9 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+dist/
+_build/
+node_modules
+.venv
+**/__pycache__/
+**/.ipynb_checkpoints
