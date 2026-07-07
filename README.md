@@ -8,12 +8,11 @@ The widget follows the anywidget specification, so it may be invoked either in a
 
 Use the `anywidget` directive with the latest release:
 
-```{raw} markdown
-```{anywidget} https://github.com/ssenhorst/airy-spot-widget/releases/latest/download/widget.js
+```markdown
+:::{anywidget} https://github.com/ssenhorst/airy-spot-widget/releases/latest/download/widget.js
 :css: https://github.com/ssenhorst/airy-spot-widget/releases/latest/download/widget.css
+:::
 ```
-```
-
 
 ## Usage (python)
 
