@@ -31,3 +31,5 @@ widget
 ```
 
 ## Example
+
+The widget is available on [github pages](https://ssenhorst.github.io/airy-spot-widget/).
